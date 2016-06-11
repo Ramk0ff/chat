@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Chat Application</title>
+    <link rel="stylesheet" href="/main.css">
+  </head>
+  <body>
+
+    <ul id="chat">
+    </ul>
+
+    <form id="send-message" action="">
+      <input autocomplete="off" id="message"><button>Send</button>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      $(document).ready(function () {
+        var socket = io.connect();
+        var messageForm = $('#send-message');
+        var messageBox = $('#message');
+        var chat = $('#chat');
+
+        messageForm.submit(function (e) {
+          e.preventDefault();
+          socket.emit('send message', messageBox.val());
+          messageBox.val('');
+        });
+
+        socket.on('new message', function (data) {
+          chat.append('<li>' + data + '<br/>');
+        })
+      });
+    </script>
+  </body>
+</html>

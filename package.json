@@ -1,8 +1,8 @@
 {
   "name": "chat",
   "version": "1.0.0",
-  "description": "simple chat applicatoion for educational purposes",
-  "main": "server.js",
+  "description": "simple chat application for educational purposes",
+  "main": "app/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
