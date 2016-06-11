@@ -40,7 +40,8 @@ io.sockets.on('connection', function (socket) {
         var msg = msg.substr(ind + 1);
         if (name in users) {
           users[name].emit('whisper', {msg: msg, nick: socket.nickname});
-          console.log('Whisper!');
+          socket.emit('whisper', {msg: msg, nick: socket.nickname});
+          console.log('Private message: "' + msg + '" from ' + socket.nickname + ' to ' + users[name].nickname);
         } else {
           callback('Error! Enter a valid user.');
         }
@@ -49,10 +50,12 @@ io.sockets.on('connection', function (socket) {
       }
     } else {
       io.sockets.emit('new message', {msg: msg, nick: socket.nickname});
+      console.log('New public message from ' + socket.nickname + ': ' + msg);
     }
   })
   socket.on('disconnect', function (data) {
     if (!socket.nickname) return;
+    console.log(socket.nickname + ' disconnected from chat');
     delete users[socket.nickname];
     updateNicknames();
   })
