@@ -1,0 +1,80 @@
+form input {
+  position: relative;
+  border: 1px #000 solid;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  margin-right: .5%;
+}
+form button {
+  position: relative;
+  float: inherit;
+  width: inherit;
+  background: rgb(130, 224, 255);
+  border: none;
+  padding: 10px;
+}
+#send-message button {
+  font: 16px Helvetica, Arial;
+  width: 100%;
+}
+#setNick input {
+  position: relative;
+  border: 1px #000 solid;
+  padding: 10px;
+  width: 30%;
+  margin-right: .5%;
+}
+#setNick button {
+  font: 16px Helvetica, Arial;
+}
+body {
+  font: 16px Helvetica, Arial;
+}
+#chat {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  height: 500px;
+}
+#chat li {
+  padding: 5px 10px;
+}
+#chat li:nth-child(odd) {
+  background: #eee;
+}
+#chatWrap {
+  float: left;
+  border: 1px #000 solid;
+  width: 30%;
+}
+#usersWrap {
+  float: left;
+  border: 1px #000 solid;
+  width: 20%;
+  height: 560px;
+  margin-left: 10px;
+}
+#contentWrap {
+  display: none;
+}
+.error {
+  color: red;
+}
+.whisper {
+  color: gray;
+  font-style: italic;
+}
+.chat-space {
+  text-align: center;
+}
+#users {
+  list-style-type: none;
+}
+#users li {
+  margin-top: 10px;
+  padding: 0px 0px 0px 20px;
+}
+.users-block {
+  text-align: center;
+}

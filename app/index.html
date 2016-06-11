@@ -3,36 +3,36 @@
   <head>
     <meta charset="utf-8">
     <title>Chat Application</title>
-    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
 
-    <ul id="chat">
-    </ul>
+    <div id="nickWrap">
+      <p>Enter a username:</p>
+      <p id="nickError"></p>
+      <form autocomplete="off" id="setNick">
+        <input autofocus="" id="nickname">
+        <button type="submit">Set Nickname</button>
+      </form>
+    </div>
 
-    <form id="send-message" action="">
-      <input autocomplete="off" id="message"><button>Send</button>
-    </form>
+    <div id="contentWrap">
+      <div id="chatWrap">
+        <p class="chat-space">Chat Space</p><hr/>
+        <ul id="chat"></ul>
+
+        <form autocomplete="off" id="send-message" action="">
+          <input id="message"><button>Send</button>
+        </form>
+      </div>
+      <div id="usersWrap">
+        <p class="users-block">Users in Chat</p><hr/>
+        <div id="users"></div>
+      </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-    <script>
-      $(document).ready(function () {
-        var socket = io.connect();
-        var messageForm = $('#send-message');
-        var messageBox = $('#message');
-        var chat = $('#chat');
-
-        messageForm.submit(function (e) {
-          e.preventDefault();
-          socket.emit('send message', messageBox.val());
-          messageBox.val('');
-        });
-
-        socket.on('new message', function (data) {
-          chat.append('<li>' + data + '<br/>');
-        })
-      });
-    </script>
+    <script src="js/chat-ui.js"></script>
   </body>
 </html>
