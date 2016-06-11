@@ -1,0 +1,24 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "description": "simple chat applicatoion for educational purposes",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ramk0ff/chat.git"
+  },
+  "keywords": [
+    "chat",
+    "node",
+    "socket"
+  ],
+  "author": "Ivan Protsyk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ramk0ff/chat/issues"
+  },
+  "homepage": "https://github.com/Ramk0ff/chat#readme"
+}
